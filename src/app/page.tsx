@@ -35,20 +35,6 @@ export default function Home() {
     }
   ];
 
-  const testimonials = [
-    {
-      quote: "Our family finally has one place for everything. The kids love sharing photos and we use the calendar every day.",
-      author: "The Johnson Family",
-      role: "Using for 6 months",
-      rating: 5
-    },
-    {
-      quote: "Planning our family vacation was so much easier when everyone could vote on activities. No more arguments!",
-      author: "The Chen Family", 
-      role: "Family of 5",
-      rating: 5
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -62,15 +48,10 @@ export default function Home() {
             <span className="text-xl font-medium text-gray-900">the ossai brothers</span>
           </div>
           
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
-            <a href="#security" className="text-gray-600 hover:text-gray-900 transition-colors">Security</a>
-            <a href="#testimonials" className="text-gray-600 hover:text-gray-900 transition-colors">Reviews</a>
-          </nav>
           
           <Link href="/dashboard">
             <Button className="bg-black hover:bg-gray-800 text-white rounded-full px-6">
-              Get Started
+              Enter
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
@@ -91,29 +72,13 @@ export default function Home() {
               Share photos, plan trips, coordinate schedules, and stay connected with the people who matter most.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <div className="flex justify-center">
               <Link href="/dashboard">
                 <Button size="lg" className="bg-black hover:bg-gray-800 text-white rounded-full px-8 py-4 text-lg">
-                  Get started
+                  Enter
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-            </div>
-
-            {/* Family Benefits */}
-            <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-500">
-              <div className="flex items-center gap-2">
-                <Check className="h-4 w-4 text-green-500" />
-                Private & secure
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="h-4 w-4 text-green-500" />
-                Easy to use
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="h-4 w-4 text-green-500" />
-                Free for families
-              </div>
             </div>
           </div>
         </div>
@@ -182,60 +147,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="testimonials" className="py-32">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Families love it
-            </h2>
-            <p className="text-xl text-gray-600">
-              See how real families stay connected with the Ossai Brothers
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className={`bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transition-all duration-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
-                style={{ transitionDelay: `${index * 200}ms` }}
-              >
-                <div className="flex items-center gap-1 mb-6">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <div key={i} className="w-5 h-5 bg-yellow-400 rounded-full"></div>
-                  ))}
-                </div>
-                <blockquote className="text-lg text-gray-900 mb-6 leading-relaxed">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </blockquote>
-                <div>
-                  <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                  <div className="text-gray-600">{testimonial.role}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-32 bg-black">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-            Start connecting today
-          </h2>
-          <p className="text-xl text-gray-400 mb-12">
-            Join families everywhere who use the Ossai Brothers to stay close.
-          </p>
-          <Link href="/dashboard">
-            <Button size="lg" className="bg-white hover:bg-gray-100 text-black rounded-full px-12 py-4 text-lg font-medium">
-              Get started for free
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="bg-gray-50 py-16">
