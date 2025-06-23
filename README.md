@@ -1,5 +1,8 @@
 # Family Connect
 
+[![CI/CD Pipeline](https://github.com/longseenotime/family-connect/actions/workflows/ci.yml/badge.svg)](https://github.com/longseenotime/family-connect/actions/workflows/ci.yml)
+[![Docker Build](https://github.com/longseenotime/family-connect/actions/workflows/docker-build.yml/badge.svg)](https://github.com/longseenotime/family-connect/actions/workflows/docker-build.yml)
+
 A modern family communication web application built with Next.js 15, React 19, and TypeScript. Features a dark, sleek UI with comprehensive family management tools.
 
 ## Features
@@ -47,6 +50,18 @@ A modern family communication web application built with Next.js 15, React 19, a
    ```
 
 4. **Open your browser**: http://localhost:3000
+
+### Using Pre-built Docker Image
+
+You can also pull the pre-built image from GitHub Container Registry:
+
+```bash
+# Pull the latest image
+docker pull ghcr.io/longseenotime/family-connect:latest
+
+# Run the container
+docker run -p 3000:3000 -e NEXTAUTH_SECRET=your-secret ghcr.io/longseenotime/family-connect:latest
+```
 
 ### Local Development
 
