@@ -15,23 +15,23 @@ export default function Dashboard() {
   }, []);
 
   const stats = [
-    { label: "messages today", value: "24", trend: "+12%", color: "text-blue-400" },
-    { label: "photos shared", value: "156", trend: "+8%", color: "text-purple-400" },
-    { label: "events planned", value: "3", trend: "+50%", color: "text-green-400" },
-    { label: "family score", value: "98%", trend: "+2%", color: "text-yellow-400" }
+    { label: "messages today", value: "24", trend: "+12%", color: "text-stone-600" },
+    { label: "photos shared", value: "156", trend: "+8%", color: "text-stone-700" },
+    { label: "events planned", value: "3", trend: "+50%", color: "text-stone-600" },
+    { label: "family score", value: "98%", trend: "+2%", color: "text-stone-700" }
   ];
 
   const recentActivity = [
-    { user: "raymond", action: "shared vacation photos", time: "2h ago", avatar: "R", color: "bg-blue-500" },
-    { user: "brother 1", action: "updated calendar event", time: "4h ago", avatar: "B", color: "bg-green-500" },
-    { user: "brother 2", action: "voted on trip destination", time: "6h ago", avatar: "B", color: "bg-purple-500" },
-    { user: "raymond", action: "posted family update", time: "1d ago", avatar: "R", color: "bg-orange-500" }
+    { user: "raymond", action: "shared vacation photos", time: "2h ago", avatar: "R", color: "bg-stone-600" },
+    { user: "brother 1", action: "updated calendar event", time: "4h ago", avatar: "B", color: "bg-stone-500" },
+    { user: "brother 2", action: "voted on trip destination", time: "6h ago", avatar: "B", color: "bg-stone-700" },
+    { user: "raymond", action: "posted family update", time: "1d ago", avatar: "R", color: "bg-stone-400" }
   ];
 
   const upcomingEvents = [
-    { title: "family dinner", date: "today", time: "7:00 PM", color: "bg-red-500" },
-    { title: "movie night", date: "tomorrow", time: "8:30 PM", color: "bg-blue-500" },
-    { title: "beach trip", date: "weekend", time: "10:00 AM", color: "bg-green-500" }
+    { title: "family dinner", date: "today", time: "7:00 PM", color: "bg-stone-600" },
+    { title: "movie night", date: "tomorrow", time: "8:30 PM", color: "bg-stone-500" },
+    { title: "beach trip", date: "weekend", time: "10:00 AM", color: "bg-stone-700" }
   ];
 
   return (
@@ -40,10 +40,10 @@ export default function Dashboard() {
       <div className={`mb-8 transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent mb-2">
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-stone-800 to-stone-700 bg-clip-text text-transparent mb-2">
               welcome back, raymond
             </h1>
-            <p className="text-slate-400 text-lg">
+            <p className="text-stone-600 text-lg">
               {currentTime.toLocaleDateString('en-US', { 
                 weekday: 'long', 
                 year: 'numeric', 
@@ -57,11 +57,11 @@ export default function Dashboard() {
           </div>
           
           <div className="flex items-center gap-3">
-            <Button variant="outline" className="border-slate-600 text-slate-300 hover:bg-slate-800">
+            <Button variant="outline" className="border-stone-400 text-stone-600 hover:bg-stone-200">
               <Bell className="w-4 h-4 mr-2" />
               3 new
             </Button>
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+            <Button className="bg-gradient-to-r from-stone-700 to-stone-800 hover:from-stone-800 hover:to-stone-900 text-stone-100">
               <Plus className="w-4 h-4 mr-2" />
               add content
             </Button>
@@ -77,26 +77,26 @@ export default function Dashboard() {
           {stats.map((stat, index) => (
             <div 
               key={stat.label}
-              className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:bg-slate-800/50 transition-all duration-300 group"
+              className="bg-stone-100/30 backdrop-blur-sm border border-stone-300/50 rounded-2xl p-6 hover:bg-stone-200/50 transition-all duration-300 group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-slate-400 font-medium">{stat.label}</span>
-                <TrendingUp className="w-4 h-4 text-green-400" />
+                <span className="text-sm text-stone-500 font-medium">{stat.label}</span>
+                <TrendingUp className="w-4 h-4 text-stone-500" />
               </div>
               <div className="flex items-end justify-between">
                 <span className={`text-3xl font-bold ${stat.color}`}>{stat.value}</span>
-                <span className="text-sm text-green-400">{stat.trend}</span>
+                <span className="text-sm text-stone-500">{stat.trend}</span>
               </div>
             </div>
           ))}
         </div>
 
         {/* Recent Activity - Large Card */}
-        <div className="col-span-12 lg:col-span-8 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6">
+        <div className="col-span-12 lg:col-span-8 bg-stone-100/30 backdrop-blur-sm border border-stone-300/50 rounded-2xl p-6">
           <div className="flex items-center justify-between mb-6">
-            <h3 className="text-xl font-semibold text-white">recent family activity</h3>
-            <Button variant="ghost" size="sm" className="text-slate-400 hover:text-white">
+            <h3 className="text-xl font-semibold text-stone-800">recent family activity</h3>
+            <Button variant="ghost" size="sm" className="text-stone-600 hover:text-stone-800">
               view all
             </Button>
           </div>
@@ -105,122 +105,122 @@ export default function Dashboard() {
             {recentActivity.map((activity, index) => (
               <div 
                 key={index}
-                className="flex items-center gap-4 p-4 bg-slate-900/30 rounded-xl hover:bg-slate-900/50 transition-all duration-300 group"
+                className="flex items-center gap-4 p-4 bg-stone-200/30 rounded-xl hover:bg-stone-300/50 transition-all duration-300 group"
               >
-                <div className={`w-12 h-12 ${activity.color} rounded-full flex items-center justify-center text-white font-semibold`}>
+                <div className={`w-12 h-12 ${activity.color} rounded-full flex items-center justify-center text-stone-100 font-semibold`}>
                   {activity.avatar}
                 </div>
                 <div className="flex-1">
-                  <p className="text-white">
+                  <p className="text-stone-800">
                     <span className="font-medium">{activity.user}</span> {activity.action}
                   </p>
-                  <p className="text-sm text-slate-400">{activity.time}</p>
+                  <p className="text-sm text-stone-600">{activity.time}</p>
                 </div>
-                <Heart className="w-5 h-5 text-slate-600 group-hover:text-red-400 transition-colors cursor-pointer" />
+                <Heart className="w-5 h-5 text-stone-400 group-hover:text-stone-600 transition-colors cursor-pointer" />
               </div>
             ))}
           </div>
         </div>
 
         {/* Quick Actions */}
-        <div className="col-span-12 lg:col-span-4 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6">
-          <h3 className="text-xl font-semibold text-white mb-6">quick actions</h3>
+        <div className="col-span-12 lg:col-span-4 bg-stone-100/30 backdrop-blur-sm border border-stone-300/50 rounded-2xl p-6">
+          <h3 className="text-xl font-semibold text-stone-800 mb-6">quick actions</h3>
           
           <div className="grid grid-cols-2 gap-3">
             <Button 
               variant="outline" 
-              className="h-20 border-slate-600 hover:bg-blue-600/10 hover:border-blue-500/50 flex-col gap-2 group"
+              className="h-20 border-stone-400 hover:bg-stone-200/50 hover:border-stone-500/50 flex-col gap-2 group"
             >
-              <MessageCircle className="w-6 h-6 text-blue-400 group-hover:scale-110 transition-transform" />
+              <MessageCircle className="w-6 h-6 text-stone-600 group-hover:scale-110 transition-transform" />
               <span className="text-sm">chat</span>
             </Button>
             
             <Button 
               variant="outline" 
-              className="h-20 border-slate-600 hover:bg-purple-600/10 hover:border-purple-500/50 flex-col gap-2 group"
+              className="h-20 border-stone-400 hover:bg-stone-200/50 hover:border-stone-500/50 flex-col gap-2 group"
             >
-              <Camera className="w-6 h-6 text-purple-400 group-hover:scale-110 transition-transform" />
+              <Camera className="w-6 h-6 text-stone-600 group-hover:scale-110 transition-transform" />
               <span className="text-sm">photos</span>
             </Button>
             
             <Button 
               variant="outline" 
-              className="h-20 border-slate-600 hover:bg-green-600/10 hover:border-green-500/50 flex-col gap-2 group"
+              className="h-20 border-stone-400 hover:bg-stone-200/50 hover:border-stone-500/50 flex-col gap-2 group"
             >
-              <Calendar className="w-6 h-6 text-green-400 group-hover:scale-110 transition-transform" />
+              <Calendar className="w-6 h-6 text-stone-600 group-hover:scale-110 transition-transform" />
               <span className="text-sm">calendar</span>
             </Button>
             
             <Button 
               variant="outline" 
-              className="h-20 border-slate-600 hover:bg-orange-600/10 hover:border-orange-500/50 flex-col gap-2 group"
+              className="h-20 border-stone-400 hover:bg-stone-200/50 hover:border-stone-500/50 flex-col gap-2 group"
             >
-              <Plane className="w-6 h-6 text-orange-400 group-hover:scale-110 transition-transform" />
+              <Plane className="w-6 h-6 text-stone-600 group-hover:scale-110 transition-transform" />
               <span className="text-sm">trips</span>
             </Button>
           </div>
         </div>
 
         {/* Upcoming Events */}
-        <div className="col-span-12 lg:col-span-6 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6">
-          <h3 className="text-xl font-semibold text-white mb-6">upcoming events</h3>
+        <div className="col-span-12 lg:col-span-6 bg-stone-100/30 backdrop-blur-sm border border-stone-300/50 rounded-2xl p-6">
+          <h3 className="text-xl font-semibold text-stone-800 mb-6">upcoming events</h3>
           
           <div className="space-y-4">
             {upcomingEvents.map((event, index) => (
               <div 
                 key={index}
-                className="flex items-center gap-4 p-4 bg-slate-900/30 rounded-xl hover:bg-slate-900/50 transition-all duration-300 group cursor-pointer"
+                className="flex items-center gap-4 p-4 bg-stone-200/30 rounded-xl hover:bg-stone-300/50 transition-all duration-300 group cursor-pointer"
               >
                 <div className={`w-3 h-3 ${event.color} rounded-full flex-shrink-0 group-hover:scale-125 transition-transform`} />
                 <div className="flex-1">
-                  <h4 className="text-white font-medium">{event.title}</h4>
-                  <p className="text-sm text-slate-400">{event.date} • {event.time}</p>
+                  <h4 className="text-stone-800 font-medium">{event.title}</h4>
+                  <p className="text-sm text-stone-600">{event.date} • {event.time}</p>
                 </div>
-                <Clock className="w-4 h-4 text-slate-600 group-hover:text-slate-400 transition-colors" />
+                <Clock className="w-4 h-4 text-stone-500 group-hover:text-stone-700 transition-colors" />
               </div>
             ))}
           </div>
           
           <Button 
             variant="outline" 
-            className="w-full mt-4 border-slate-600 text-slate-300 hover:bg-slate-800"
+            className="w-full mt-4 border-stone-400 text-stone-600 hover:bg-stone-200"
           >
             view full calendar
           </Button>
         </div>
 
         {/* Family Map - Visual */}
-        <div className="col-span-12 lg:col-span-6 bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6">
-          <h3 className="text-xl font-semibold text-white mb-6">family locations</h3>
+        <div className="col-span-12 lg:col-span-6 bg-stone-100/30 backdrop-blur-sm border border-stone-300/50 rounded-2xl p-6">
+          <h3 className="text-xl font-semibold text-stone-800 mb-6">family locations</h3>
           
-          <div className="relative h-48 bg-gradient-to-br from-blue-900/20 to-purple-900/20 rounded-xl overflow-hidden">
+          <div className="relative h-48 bg-gradient-to-br from-stone-200/20 to-stone-300/20 rounded-xl overflow-hidden">
             {/* Simulated Map Background */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.3)_0%,transparent_50%)] opacity-60" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(147,51,234,0.3)_0%,transparent_50%)] opacity-60" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(120,113,108,0.3)_0%,transparent_50%)] opacity-60" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(168,162,158,0.3)_0%,transparent_50%)] opacity-60" />
             
             {/* Location Pins */}
             <div className="absolute top-8 left-12 flex items-center gap-2">
-              <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse" />
-              <span className="text-sm text-white">raymond • home</span>
+              <div className="w-3 h-3 bg-stone-600 rounded-full animate-pulse" />
+              <span className="text-sm text-stone-800">raymond • home</span>
             </div>
             
             <div className="absolute bottom-12 right-16 flex items-center gap-2">
-              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-sm text-white">brother • office</span>
+              <div className="w-3 h-3 bg-stone-500 rounded-full animate-pulse" />
+              <span className="text-sm text-stone-800">brother • office</span>
             </div>
             
             <div className="absolute top-20 right-20 flex items-center gap-2">
-              <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse" />
-              <span className="text-sm text-white">brother • gym</span>
+              <div className="w-3 h-3 bg-stone-700 rounded-full animate-pulse" />
+              <span className="text-sm text-stone-800">brother • gym</span>
             </div>
           </div>
           
           <div className="flex items-center justify-between mt-4">
-            <div className="flex items-center gap-2 text-slate-400">
+            <div className="flex items-center gap-2 text-stone-600">
               <MapPin className="w-4 h-4" />
               <span className="text-sm">3 family members online</span>
             </div>
-            <Button variant="ghost" size="sm" className="text-slate-400 hover:text-white">
+            <Button variant="ghost" size="sm" className="text-stone-600 hover:text-stone-800">
               full map
             </Button>
           </div>
