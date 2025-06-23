@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Calendar, Users, Camera, MessageSquare } from "lucide-react";
+import { ArrowRight, Calendar, Users, Camera, MessageSquare } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
