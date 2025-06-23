@@ -1,16 +1,16 @@
 {
   "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
+  "devCommand": "npm run dev", 
   "installCommand": "npm install && npx prisma generate",
   "framework": "nextjs",
   "regions": ["iad1"],
   "env": {
-    "NEXTAUTH_URL": "https://family-connect-app.vercel.app",
+    "NEXTAUTH_URL": "https://the-ossai-brothers.vercel.app",
     "NODE_ENV": "production"
   },
   "build": {
     "env": {
-      "NEXTAUTH_URL": "https://family-connect-app.vercel.app"
+      "NEXTAUTH_URL": "https://the-ossai-brothers.vercel.app"
     }
   }
 }
