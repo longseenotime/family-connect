@@ -1,20 +1,20 @@
-# Family Connect
+# the ossai brothers
 
 [![CI/CD Pipeline](https://github.com/longseenotime/family-connect/actions/workflows/ci.yml/badge.svg)](https://github.com/longseenotime/family-connect/actions/workflows/ci.yml)
 [![Docker Build](https://github.com/longseenotime/family-connect/actions/workflows/docker-build.yml/badge.svg)](https://github.com/longseenotime/family-connect/actions/workflows/docker-build.yml)
 
-A modern family communication web application built with Next.js 15, React 19, and TypeScript. Features a dark, sleek UI with comprehensive family management tools.
+the private communication hub for the ossai brothers. built with next.js 15, react 19, and typescript. features a dark, sleek ui with comprehensive tools for staying connected.
 
 ## Features
 
-- 🏠 **Family Dashboard** - Centralized activity hub
-- 📅 **Calendar** - Family event scheduling and management
-- 📸 **Photo Albums** - Share and organize family memories
-- 📰 **News Feed** - Family updates and announcements
-- ✈️ **Trip Planning** - Collaborative vacation planning with voting
-- 💬 **Chat** - Real-time family messaging
-- 🔐 **Authentication** - Secure Google OAuth integration
-- 🎨 **Dark Theme** - Modern, minimalist design
+- 🏠 **brothers dashboard** - centralized activity hub
+- 📅 **calendar** - brothers event scheduling and management
+- 📸 **photo albums** - share and organize memories
+- 📰 **news feed** - brothers updates and announcements
+- ✈️ **trip planning** - collaborative vacation planning with voting
+- 💬 **chat** - real-time brothers messaging
+- 🔐 **authentication** - secure google oauth integration
+- 🎨 **dark theme** - modern, minimalist design
 
 ## Tech Stack
 

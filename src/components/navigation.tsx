@@ -23,9 +23,9 @@ export function Navigation() {
       <div className="p-6">
         <Link href="/dashboard" className="flex items-center gap-2">
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm">FC</span>
+            <span className="text-primary-foreground font-bold text-sm">OB</span>
           </div>
-          <span className="text-xl font-bold text-foreground">Family Connect</span>
+          <span className="text-xl font-bold text-foreground">the ossai brothers</span>
         </Link>
       </div>
 
