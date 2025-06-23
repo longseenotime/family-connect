@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Calendar, Clock, Users, Camera, Plane, MessageCircle, Bell, Plus, TrendingUp, Heart, MapPin } from "lucide-react";
+import { Calendar, Clock, Camera, Plane, MessageCircle, Bell, Plus, TrendingUp, Heart, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Dashboard() {

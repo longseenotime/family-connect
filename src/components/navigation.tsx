@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Home, Calendar, Camera, MessageSquare, Users, Bell, Plane, Settings, User } from "lucide-react";
+import { Home, Calendar, Camera, MessageSquare, Users, Bell, Plane, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navigation = [
