@@ -2,218 +2,262 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, Camera, Users, MessageCircle, Plane, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Shield, Users, Smartphone, BarChart3 } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
-    
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   const features = [
     {
-      icon: Calendar,
-      title: "dynamic calendar",
-      description: "smart scheduling with family sync",
-      gradient: "from-stone-500 to-stone-600",
-      delay: "0ms"
-    },
-    {
-      icon: Camera,
-      title: "memory vault",
-      description: "ai-organized photo experiences",
-      gradient: "from-stone-600 to-stone-700",
-      delay: "100ms"
-    },
-    {
       icon: Users,
-      title: "brothers feed",
-      description: "real-time family updates",
-      gradient: "from-stone-400 to-stone-500",
-      delay: "200ms"
+      title: "Family First",
+      description: "Built specifically for modern families who value connection and privacy."
     },
     {
-      icon: Plane,
-      title: "trip planner",
-      description: "collaborative vacation voting",
-      gradient: "from-stone-500 to-stone-600",
-      delay: "300ms"
+      icon: Shield,
+      title: "Bank-Grade Security",
+      description: "Your family data is protected with enterprise-level encryption and security."
     },
     {
-      icon: MessageCircle,
-      title: "instant connect",
-      description: "seamless family messaging",
-      gradient: "from-stone-600 to-stone-700",
-      delay: "400ms"
+      icon: Smartphone,
+      title: "Mobile Optimized",
+      description: "Perfect experience across all devices, from phones to desktops."
     },
     {
-      icon: Sparkles,
-      title: "smart insights",
-      description: "family activity analytics",
-      gradient: "from-stone-400 to-stone-500",
-      delay: "500ms"
+      icon: BarChart3,
+      title: "Smart Insights",
+      description: "Understand your family dynamics with intelligent analytics and insights."
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "Finally, a platform that gets how modern families communicate. The Ossai Brothers app has completely transformed how we stay connected.",
+      author: "Sarah Johnson",
+      role: "Mother of 3",
+      rating: 5
+    },
+    {
+      quote: "The trip planning feature with voting is genius. No more endless group chats trying to decide where to go.",
+      author: "Michael Chen", 
+      role: "Tech Executive",
+      rating: 5
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 via-stone-100 to-stone-200 relative overflow-hidden">
-      {/* Subtle Background Effects */}
-      <div className="absolute inset-0">
-        <div 
-          className="absolute w-96 h-96 bg-gradient-to-r from-stone-300/20 to-stone-400/15 rounded-full blur-3xl"
-          style={{
-            left: mousePosition.x - 192,
-            top: mousePosition.y - 192,
-            transition: 'all 0.3s ease-out'
-          }}
-        />
-        <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-r from-stone-300/10 to-stone-400/10 rounded-full blur-2xl animate-pulse" />
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-stone-200/10 to-stone-300/10 rounded-full blur-2xl animate-pulse delay-1000" />
-      </div>
-
-      {/* Subtle Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(120,113,108,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(120,113,108,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_80%)]" />
-
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="relative z-50 p-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className={`flex items-center gap-3 transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-            <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-r from-stone-700 to-stone-800 rounded-xl rotate-45 flex items-center justify-center">
-                <span className="text-stone-100 font-bold text-lg -rotate-45">OB</span>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-stone-700 to-stone-800 rounded-xl blur-lg opacity-30 -z-10" />
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">OB</span>
             </div>
-            <div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-stone-800 to-stone-700 bg-clip-text text-transparent">
-                the ossai brothers
-              </h1>
-              <p className="text-xs text-stone-500 font-medium">family connect • 2025</p>
-            </div>
+            <span className="text-xl font-medium text-gray-900">the ossai brothers</span>
           </div>
           
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
+            <a href="#security" className="text-gray-600 hover:text-gray-900 transition-colors">Security</a>
+            <a href="#testimonials" className="text-gray-600 hover:text-gray-900 transition-colors">Reviews</a>
+          </nav>
+          
           <Link href="/dashboard">
-            <Button 
-              className={`bg-gradient-to-r from-stone-700 to-stone-800 hover:from-stone-800 hover:to-stone-900 text-stone-100 border-0 transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-              style={{ transitionDelay: '200ms' }}
-            >
-              Enter Hub
+            <Button className="bg-black hover:bg-gray-800 text-white rounded-full px-6">
+              Get Started
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="relative z-10 max-w-7xl mx-auto px-6 pt-20">
-        {/* Hero Section */}
-        <div className="text-center mb-20">
-          <div className={`transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-            <div className="inline-flex items-center gap-2 bg-stone-200/50 backdrop-blur-sm border border-stone-300/50 rounded-full px-4 py-2 mb-8">
-              <Sparkles className="w-4 h-4 text-stone-600" />
-              <span className="text-sm text-stone-600">state-of-the-art family platform</span>
-            </div>
-            
-            <h2 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-stone-800 via-stone-700 to-stone-600 bg-clip-text text-transparent">
-                family
-              </span>
+      {/* Hero Section */}
+      <section className="pt-20 pb-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+              Family communication,
               <br />
-              <span className="bg-gradient-to-r from-stone-600 via-stone-500 to-stone-400 bg-clip-text text-transparent">
-                reimagined
-              </span>
-            </h2>
+              <span className="text-gray-500">reimagined</span>
+            </h1>
             
-            <p className="text-xl text-stone-600 max-w-2xl mx-auto mb-12 leading-relaxed">
-              experience the future of family connection. dynamic interfaces, intelligent features, 
-              and seamless collaboration for the modern ossai brothers.
+            <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+              The modern way for families to stay connected. Share moments, plan together, 
+              and keep everyone in the loop with our beautiful, secure platform.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Link href="/dashboard">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-stone-700 to-stone-800 hover:from-stone-800 hover:to-stone-900 text-stone-100 px-8 py-4 text-lg group relative overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-stone-600 to-stone-700 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                  <span className="relative z-10">explore dashboard</span>
-                  <ArrowRight className="ml-2 h-5 w-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+                <Button size="lg" className="bg-black hover:bg-gray-800 text-white rounded-full px-8 py-4 text-lg">
+                  Start for free
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-stone-400 text-stone-600 hover:bg-stone-200 px-8 py-4 text-lg backdrop-blur-sm"
-              >
-                watch demo
+              <Button variant="outline" size="lg" className="border-gray-300 text-gray-700 hover:bg-gray-50 rounded-full px-8 py-4 text-lg">
+                Watch demo
               </Button>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-500">
+              <div className="flex items-center gap-2">
+                <Check className="h-4 w-4 text-green-500" />
+                Bank-grade security
+              </div>
+              <div className="flex items-center gap-2">
+                <Check className="h-4 w-4 text-green-500" />
+                Privacy focused
+              </div>
+              <div className="flex items-center gap-2">
+                <Check className="h-4 w-4 text-green-500" />
+                Always free
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Features Bento Grid */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20 transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`} style={{ transitionDelay: '400ms' }}>
-          {features.map((feature) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={feature.title}
-                className="group relative p-8 bg-stone-100/30 backdrop-blur-sm border border-stone-300/50 rounded-2xl hover:bg-stone-200/50 transition-all duration-500 hover:scale-105 hover:border-stone-400/50 cursor-pointer"
-                style={{ animationDelay: feature.delay }}
-              >
-                {/* Gradient Overlay on Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl`} />
-                
-                {/* Icon */}
-                <div className={`relative w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className="w-8 h-8 text-stone-100" />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-xl blur-lg opacity-30 -z-10 group-hover:opacity-50 transition-opacity duration-300`} />
+      {/* Hero Image/Demo */}
+      <section className="pb-32">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className={`relative transition-all duration-1000 delay-300 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+            <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl p-8 md:p-16 shadow-2xl">
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                 </div>
-
-                {/* Content */}
-                <h3 className="text-xl font-semibold text-stone-800 mb-3 group-hover:text-stone-900 transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-stone-600 group-hover:text-stone-700 transition-colors leading-relaxed">
-                  {feature.description}
-                </p>
-
-                {/* Arrow Icon */}
-                <ArrowRight className="absolute top-8 right-8 w-5 h-5 text-stone-400 group-hover:text-stone-600 group-hover:translate-x-1 transition-all duration-300" />
+                <div className="space-y-4">
+                  <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+                  <div className="h-4 bg-gray-100 rounded w-1/2"></div>
+                  <div className="h-32 bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg"></div>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="h-20 bg-gray-100 rounded"></div>
+                    <div className="h-20 bg-gray-200 rounded"></div>
+                    <div className="h-20 bg-gray-100 rounded"></div>
+                  </div>
+                </div>
               </div>
-            );
-          })}
-        </div>
-
-        {/* Call to Action */}
-        <div className={`text-center pb-20 transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`} style={{ transitionDelay: '600ms' }}>
-          <div className="bg-gradient-to-r from-stone-200/50 to-stone-300/50 backdrop-blur-sm border border-stone-400/50 rounded-3xl p-12 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-stone-800 mb-4">ready to connect?</h3>
-            <p className="text-stone-600 mb-8 text-lg">
-              join the ossai brothers in experiencing the future of family communication
-            </p>
-            <Link href="/dashboard">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-stone-700 to-stone-800 hover:from-stone-800 hover:to-stone-900 text-stone-100 px-12 py-4 text-lg"
-              >
-                get started now
-              </Button>
-            </Link>
+            </div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-black rounded-full flex items-center justify-center text-white font-bold text-lg shadow-xl">
+              OB
+            </div>
           </div>
         </div>
-      </main>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Everything your family needs
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              From planning trips to sharing photos, we&apos;ve built the complete platform for modern family life.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <div
+                  key={feature.title}
+                  className={`text-center transition-all duration-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+                  style={{ transitionDelay: `${index * 150}ms` }}
+                >
+                  <div className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Icon className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section id="testimonials" className="py-32">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Loved by families worldwide
+            </h2>
+            <p className="text-xl text-gray-600">
+              Join thousands of families who have transformed their communication
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className={`bg-white p-8 rounded-3xl shadow-lg border border-gray-100 transition-all duration-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+                style={{ transitionDelay: `${index * 200}ms` }}
+              >
+                <div className="flex items-center gap-1 mb-6">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <div key={i} className="w-5 h-5 bg-yellow-400 rounded-full"></div>
+                  ))}
+                </div>
+                <blockquote className="text-lg text-gray-900 mb-6 leading-relaxed">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </blockquote>
+                <div>
+                  <div className="font-semibold text-gray-900">{testimonial.author}</div>
+                  <div className="text-gray-600">{testimonial.role}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-32 bg-black">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+            Ready to bring your family closer?
+          </h2>
+          <p className="text-xl text-gray-400 mb-12">
+            Join the Ossai Brothers platform today and experience the future of family communication.
+          </p>
+          <Link href="/dashboard">
+            <Button size="lg" className="bg-white hover:bg-gray-100 text-black rounded-full px-12 py-4 text-lg font-medium">
+              Get started for free
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center gap-2 mb-4 md:mb-0">
+              <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">OB</span>
+              </div>
+              <span className="text-xl font-medium text-gray-900">the ossai brothers</span>
+            </div>
+            <div className="text-gray-600">
+              © 2025 The Ossai Brothers. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
