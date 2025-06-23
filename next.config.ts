@@ -4,11 +4,8 @@ const nextConfig: NextConfig = {
   // Remove static export for Vercel deployment
   images: {
     unoptimized: true
-  },
-  // Enable experimental features for better performance
-  experimental: {
-    optimizeCss: true,
   }
+  // Removed experimental optimizeCss to fix Vercel build
 };
 
 export default nextConfig;
