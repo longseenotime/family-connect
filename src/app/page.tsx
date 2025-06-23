@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Shield, Users, Smartphone, BarChart3 } from "lucide-react";
+import { ArrowRight, Check, Calendar, Users, Camera, MessageSquare } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -15,37 +15,37 @@ export default function Home() {
   const features = [
     {
       icon: Users,
-      title: "Family First",
-      description: "Built specifically for modern families who value connection and privacy."
+      title: "Stay Connected",
+      description: "Share moments, coordinate schedules, and keep everyone in the loop effortlessly."
     },
     {
-      icon: Shield,
-      title: "Bank-Grade Security",
-      description: "Your family data is protected with enterprise-level encryption and security."
+      icon: Calendar,
+      title: "Plan Together",
+      description: "Shared calendars and trip planning with voting to make family decisions easy."
     },
     {
-      icon: Smartphone,
-      title: "Mobile Optimized",
-      description: "Perfect experience across all devices, from phones to desktops."
+      icon: Camera,
+      title: "Capture Memories",
+      description: "Upload and share photos instantly with family members across all devices."
     },
     {
-      icon: BarChart3,
-      title: "Smart Insights",
-      description: "Understand your family dynamics with intelligent analytics and insights."
+      icon: MessageSquare,
+      title: "Family Chat",
+      description: "Private family conversations, announcements, and daily check-ins in one place."
     }
   ];
 
   const testimonials = [
     {
-      quote: "Finally, a platform that gets how modern families communicate. The Ossai Brothers app has completely transformed how we stay connected.",
-      author: "Sarah Johnson",
-      role: "Mother of 3",
+      quote: "Our family finally has one place for everything. The kids love sharing photos and we use the calendar every day.",
+      author: "The Johnson Family",
+      role: "Using for 6 months",
       rating: 5
     },
     {
-      quote: "The trip planning feature with voting is genius. No more endless group chats trying to decide where to go.",
-      author: "Michael Chen", 
-      role: "Tech Executive",
+      quote: "Planning our family vacation was so much easier when everyone could vote on activities. No more arguments!",
+      author: "The Chen Family", 
+      role: "Family of 5",
       rating: 5
     }
   ];
@@ -82,42 +82,37 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-              Family communication,
+              Keep your family
               <br />
-              <span className="text-gray-500">reimagined</span>
+              <span className="text-gray-500">close</span>
             </h1>
             
             <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              The modern way for families to stay connected. Share moments, plan together, 
-              and keep everyone in the loop with our beautiful, secure platform.
+              Share photos, plan trips, coordinate schedules, and stay connected with the people who matter most.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Link href="/dashboard">
                 <Button size="lg" className="bg-black hover:bg-gray-800 text-white rounded-full px-8 py-4 text-lg">
-                  Start for free
+                  Get started
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              
-              <Button variant="outline" size="lg" className="border-gray-300 text-gray-700 hover:bg-gray-50 rounded-full px-8 py-4 text-lg">
-                Watch demo
-              </Button>
             </div>
 
-            {/* Trust Indicators */}
+            {/* Family Benefits */}
             <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-500">
               <div className="flex items-center gap-2">
                 <Check className="h-4 w-4 text-green-500" />
-                Bank-grade security
+                Private & secure
               </div>
               <div className="flex items-center gap-2">
                 <Check className="h-4 w-4 text-green-500" />
-                Privacy focused
+                Easy to use
               </div>
               <div className="flex items-center gap-2">
                 <Check className="h-4 w-4 text-green-500" />
-                Always free
+                Free for families
               </div>
             </div>
           </div>
@@ -159,10 +154,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Everything your family needs
+              Made for families
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From planning trips to sharing photos, we&apos;ve built the complete platform for modern family life.
+              Everything you need to stay connected, organized, and close with your loved ones.
             </p>
           </div>
 
@@ -192,10 +187,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Loved by families worldwide
+              Families love it
             </h2>
             <p className="text-xl text-gray-600">
-              Join thousands of families who have transformed their communication
+              See how real families stay connected with the Ossai Brothers
             </p>
           </div>
 
@@ -228,10 +223,10 @@ export default function Home() {
       <section className="py-32 bg-black">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-            Ready to bring your family closer?
+            Start connecting today
           </h2>
           <p className="text-xl text-gray-400 mb-12">
-            Join the Ossai Brothers platform today and experience the future of family communication.
+            Join families everywhere who use the Ossai Brothers to stay close.
           </p>
           <Link href="/dashboard">
             <Button size="lg" className="bg-white hover:bg-gray-100 text-black rounded-full px-12 py-4 text-lg font-medium">
