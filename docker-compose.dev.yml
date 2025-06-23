@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  family-connect-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - NEXTAUTH_URL=http://localhost:3000
+      - NEXTAUTH_SECRET=development-secret-key
+      # Add your Google OAuth credentials here
+      - GOOGLE_CLIENT_ID=your-google-client-id
+      - GOOGLE_CLIENT_SECRET=your-google-client-secret
+      # Database URL for SQLite
+      - DATABASE_URL=file:./dev.db
+    volumes:
+      # Mount source code for hot reloading in development
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+      # Mount a volume for the SQLite database to persist data
+      - db_data:/app/prisma
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+
+volumes:
+  db_data:

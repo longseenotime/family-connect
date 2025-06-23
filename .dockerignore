@@ -1,0 +1,58 @@
+# Dependency directories
+node_modules/
+npm-debug.log*
+
+# Build output
+.next/
+out/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Log files
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# nyc test coverage
+.nyc_output
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Troubleshooting and test files
+TROUBLESHOOTING_LOG.md
+test.html
+app-preview.html
+simple-server.js
+custom-server.js
+
+# Database
+*.db
+*.sqlite
